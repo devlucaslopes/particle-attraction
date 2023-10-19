@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator PlayerAnimator;
 
     private CharacterController _characterController;
+
+    private int _currentXP;
     
     void Start()
     {
@@ -24,5 +26,11 @@ public class Player : MonoBehaviour
         
         PlayerAnimator.SetInteger("Horizontal", (int) direction.x);
         PlayerAnimator.SetInteger("Forward", (int) direction.z);
+    }
+
+    public void AddXP()
+    {
+        _currentXP++;
+        Debug.Log("Total de XP: " + _currentXP);
     }
 }
